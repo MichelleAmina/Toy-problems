@@ -1,0 +1,47 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+ </head>
+ <body>
+    
+ <script>
+ 
+ function generateGrade() {
+    let marks = prompt("Enter student marks between 0 and 100:"); //prompts user for an input
+
+    // if input in not a number (NaN), less than 0 or greater than 100, "Invalid input" will be displayed 
+    if (isNaN(marks) || marks < 0 || marks > 100) {
+        alert("Invalid input. Please enter a number between 0 and 100.");
+        return;
+    }
+
+    marks = parseInt(marks); //parsInt converts the input string into a number 
+
+    // Determine the grade
+    let grade;
+    if (marks > 79) {
+        grade = 'A';
+    } else if (marks >= 60 && marks <= 79) {
+        grade = 'B';
+    } else if (marks > 49 && marks <= 59) {
+        grade = 'C';
+    } else if (marks >= 40 && marks <= 49) {
+        grade = 'D';
+    } else {
+        grade = 'E';
+    }
+
+    // Display the result
+    alert('Student Grade: ' + grade);
+}
+
+// Call the function
+generateGrade();
+
+
+</script> 
+</body>
+</html>

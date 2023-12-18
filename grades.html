@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Grade Generator</title>
+</head>
+<body>
+    <input id="numericGrade"/> 
+    <button onclick="convert()">Convert</button>
+    <!--when the button is clicked, the JS function of convert will be carried out-->
+    <h3 id="gradeDisplay"> </h3> <!--a text will be displayed here informing the user of their grade-->
+
+
+    <script>//JS code goes here
+    const numericGrade = document.getElementById ('numericGrade'); //allows me to get the value the user types in 
+    const gradeDisplay = document.getElementById ('gradeDisplay');
+    function convert(){
+        const numeric = parseInt(numericGrade.value); //parsInt converts the string into a number 
+        let grade = ""
+
+        if (isNaN (numeric) || numeric < 0 || numeric >100){
+            grade = "Invalid Input. Please enter a number between 0 and 100"
+        }
+        else if (numeric >79){
+            grade = "A"; //when the input is greater than 79 ie 80+ the 
+        }
+        else if (numeric >=60 && numeric <=79){
+            grade = "B"; //when the input in between 60 and 79 (including those 2 numbers) the grade will be B
+        }
+        else if (numeric >49 && numeric <=59){
+            grade = "c"; //when the input is between 49 and 59 (including those 2 numbers) the grade will be C
+        }
+        else if (numeric >= 40 && numeric <=49){
+            grade = "D"; //when the input is betwee 40 and 49 (including those 2 numbers) the grade will be D
+        }
+        else{
+            grade = "E"; //if none of the above conditions pass, the grade will be an E
+        }
+        console.log(grade) //used this to see whether my function was working correctly 
+        gradeDisplay.innerText = `${grade}`; //the grade will be displayed on screen
+
+    }
+
+
+    </script>
+</body>
+</html>
