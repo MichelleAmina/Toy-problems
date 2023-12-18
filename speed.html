@@ -11,18 +11,24 @@
     <!--when the button is clicked, the JS function of convert will be carried out-->
     <h3 id="speedDisplay"> </h3> <!--a text will be displayed here informing the user of their status-->
 
+     
+    <script>
 
-    <script>//JS code goes here
-    const numericSpeed = document.getElementById ('numericSpeed'); //allows me to get the value the user types in 
+    //allows us to get the value the user types in 
+    const numericSpeed = document.getElementById ('numericSpeed'); 
+
+    //allows the value to be displayed
     const speedDisplay= document.getElementById ('speedDisplay');
     function convert(){
+
+        //create constant values for speed, speedLimit and demeritPointsMax that can be used throughout the code 
         const speed = parseInt(numericSpeed.value); //parsInt converts the string into a number 
         const speedLimit = 70;
         const demeritPointsMax = 12;
         
         let points = ""
 
-        // checks ii a valid speed has been inputed 
+        // checks if a valid speed has been input 
        
         if (isNaN (speed) || speed < 0){
             points= "Invalid Speed Input.";
@@ -38,9 +44,12 @@
                 points = "License Suspended.";
             }
         }
-        
-        console.log(speed) //used this to see whether my function was working correctly 
-        speedDisplay.innerText = points; //the points value will be displayed on screen
+
+        //used this to see whether my function was working correctly 
+        console.log(speed) 
+
+         //the points value will be displayed on the screen
+        speedDisplay.innerText = points; 
 
     }
 
